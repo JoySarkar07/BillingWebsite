@@ -1,0 +1,38 @@
+.category-header{
+    height: 30%;
+}
+.category-list{
+    display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  gap: 16px; /* optional spacing between items */
+  padding: 8px 0; /* optional padding */
+}
+.product-area{
+    height: 70%;
+}
+.product-list{
+    height: 70%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 100px;
+    gap: 10px;
+}
+
+.customer-form{
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cart-items{
+    height: 45%;
+}
+
+.cart-summary{
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

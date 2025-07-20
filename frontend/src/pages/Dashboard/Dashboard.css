@@ -1,0 +1,90 @@
+body, html {
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.dashboard-wrapper{
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dashboard-container{
+    padding: 20px;
+    background-color: #212529;
+    min-height: 100vh;
+    color: #e9ecef;
+}
+
+.smallcard{
+    background-color: rgba(112, 128, 144, 0.17);
+    flex-grow: 1;
+}
+
+.smallcard:hover{
+    scale: 1.01;
+}
+
+.icon{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: inset 0px 1px 13px 0px #397c46;
+}
+
+.icon > i{
+    scale: 1.5;
+    color: #6cf487;
+}
+
+.data{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.desc{
+    margin-left: 8px;
+    font-size: 0.9rem;
+    color: rgb(165, 164, 164);
+}
+
+.recent-orders-container{
+    background-color: rgba(112, 128, 144, 0.17);
+    height: 65vh;
+}
+
+.recent-icon{
+    scale: 2;
+}
+
+.table{
+    margin-top: 20px;
+}
+
+.table th{
+    font-weight: 600;
+}
+
+.table td{
+    vertical-align: middle;
+}
+
+.badge{
+    font-size: 0.85em;
+    padding: 5px 8px;
+}
+
+@media (max-width: 768px) {
+    .table-responsive{
+        overflow-x: auto;
+    }
+
+    .table td, .table th{
+        white-space: nowrap;
+    }
+}

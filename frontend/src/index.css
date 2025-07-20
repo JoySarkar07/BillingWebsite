@@ -1,0 +1,42 @@
+/* Modern Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 2px;               /* Slightly wider for better visibility */
+  height: 2px;              /* For horizontal scrollbars */
+}
+
+/* Track - with subtle gradient */
+::-webkit-scrollbar-track {
+  background: linear-gradient(90deg, #f8f9fa 0%, #e9ecef 50%, #f8f9fa 100%);
+  border-radius: 10px;
+  border: 2px solid white;   /* Creates padding effect */
+}
+
+/* Handle - with gradient and animation */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+  border-radius: 10px;
+  border: 2px solid #f8f9fa; /* Matches track border */
+  transition: all 0.3s ease;
+}
+
+/* Handle on hover - more vibrant */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #5a6268 0%, #3d4449 100%);
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+/* Handle when active (clicked) */
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(135deg, #495057 0%, #343a40 100%);
+}
+
+/* Corner between vertical and horizontal scrollbars */
+::-webkit-scrollbar-corner {
+  background: #f8f9fa;
+}
+
+/* Firefox compatible version */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #495057 #f8f9fa;
+}

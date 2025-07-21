@@ -7,8 +7,8 @@ const CartItems = ({
     const { setCartItems, setTotalItem } = useContext(AppContext);
     const decrement = (id)=>{
         setCartItems(prev=>prev.map(item=>{
-            setTotalItem(price=>price-item.price);
-            if(item.id==id){
+            if(item.itemId==id){
+                setTotalItem(price=>price-item.price);
                 return {
                     ...item,
                     quantity : item.quantity - 1,
@@ -20,7 +20,7 @@ const CartItems = ({
 
     const increment = (id)=>{
         setCartItems(prev=>prev.map(item=>{
-            if(item.id==id){
+            if(item.itemId==id){
                 setTotalItem( price=> price + item.price );
                 return {
                     ...item,
@@ -35,7 +35,7 @@ const CartItems = ({
         let deletedPrice = 0;
         setCartItems(prev=>prev.filter(item=>{
             deletedPrice = item.price;
-            return item.id!==id
+            return item.itemId!==id
         }));
         setTotalItem(price=>price-deletedPrice);
     }
@@ -57,15 +57,15 @@ const CartItems = ({
             </div>
             <div className='d-flex justify-content-between align-items-center'>
                 <div className='d-flex gap-1 justify-content-center align-items-center'>
-                    <button className='bg-danger rounded-2' onClick={()=>decrement(item.id)} disabled={item.quantity===1}>
+                    <button className='bg-danger rounded-2' onClick={()=>decrement(item.itemId)} disabled={item.quantity===1}>
                         <i className="bi bi-dash"></i>
                     </button>
                     <p className='text-center' style={{margin:0, width:"30px"}}>{item.quantity}</p>
-                    <button className='bg-info rounded-2' onClick={()=>increment(item.id)}>
+                    <button className='bg-info rounded-2' onClick={()=>increment(item.itemId)}>
                         <i className="bi bi-plus"></i>
                     </button>
                 </div>
-                <button className='bg-danger rounded-2' onClick={()=>removeItem(item.id)}>
+                <button className='bg-danger rounded-2' onClick={()=>removeItem(item.itemId)}>
                     <i className="bi bi-trash"></i>
                 </button>
             </div>

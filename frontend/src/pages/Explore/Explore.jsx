@@ -35,6 +35,7 @@ const Explore = () => {
 
   const handleCustomerDataChange = (e)=>{
     const {id, value} = e.target;
+    if(id==="phone" && value>9999999999) return;
     setCustomerData(prev=>({
       ...prev,
       [id] : value,
@@ -115,7 +116,7 @@ const Explore = () => {
       <div className="right-column p-3">
         <div className="customer-form">
           <input className="form-control" type="text" placeholder="Customer Name" id="name" value={customerData.name} onChange={handleCustomerDataChange}/>
-          <input className="form-control" type="number" placeholder="Customer Phone" id="phone" value={customerData.phone} onChange={handleCustomerDataChange}/>
+          <input className="form-control" type="number" placeholder="Customer Phone" max={9999999999} id="phone" value={customerData.phone} onChange={handleCustomerDataChange}/>
         </div>
         <hr />
         <div className="cart-items">
